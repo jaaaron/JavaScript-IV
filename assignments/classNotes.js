@@ -44,3 +44,21 @@ Child.prototype.checkIfChild = function () {
   console.log("6.", pebbles.speak());
   console.log("7.", pebbles.checkIfChild());
   console.log("8.", pebbles.yabbaDabba());
+
+//   Add a method to the User class called changeUsername()
+
+// This method should receive one parameter username, a string representing a new username for the user1 object.
+// This method should not return anything
+// Inside the method, update the value of the username property to the value of the username parameter
+class User {
+    constructor(email, username, birthday) {
+        this.email = email;
+        this.username = username;
+        this.birthday = birthday;
+    }
+  changeUsername(username) {
+    this.username = username;
+  }
+}
+
+var user1 = new User('JavaScriptStudent@teamtreehouse.com', 'JSUser1', '1/08/1991');

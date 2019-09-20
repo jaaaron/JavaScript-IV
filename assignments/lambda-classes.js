@@ -20,7 +20,7 @@ class Instructor extends Person {
     demo(subject) {
         return 'Today we are learning about ${subject}'
     }
-    grade(student, subject) {
+    grading(student, subject) {
         return '${student.name} receives a perfect score on ${subject}'
     }
 }
@@ -31,6 +31,7 @@ class Student extends Person {
         this.previousBackground = props.previousBackground
         this.className = props.className
         this.favSubjects = props.favSubjects
+        this.grade = props.grade
       }
       listSubjects() {
         this.favSubjects.forEach(subject => console.log(subject))
@@ -81,13 +82,15 @@ const fred = new Instructor({
     location: 'Bay Area',
     gender: 'male',
     previousBackground: 'Software Developer',
-    className: 'Web23',
+    className: 'Web24',
     favSubjects: [
       'Math',
       'Programming',
       'English'
     ],
+    grade: 50,
   })
+  console.log(Ted.grade)
 
   const will = new Student({
     name: 'Will',
@@ -95,13 +98,15 @@ const fred = new Instructor({
     location: 'San Jose',
     gender: 'male',
     previousBackground: 'FullStack Developer',
-    className: 'Web23',
+    className: 'Web24',
     favSubjects: [
       'English',
       'Programming',
       'Math'
     ],
+    grade: 50,
   })
+  console.log(will.grade)
 
   const jessica = new ProjectManager({
     name: 'Jessica',
@@ -125,7 +130,7 @@ fred.speak();
 
 // Instructor
 fred.demo('React.js');
-ed.grade(fred, 'JavaScript');
+ed.grading(fred, 'JavaScript');
 
 // Student
 will.listSubjects();
@@ -135,3 +140,7 @@ will.sprintChallenge('Advanced CSS');
 // Project Manager
 jessica.standUp('web22');
 jessica.debugsCode(fred, 'Node.js');
+
+// Grading Example
+console.log(fred.grading(Ted,"web"))
+console.log(fred.demo("math"))

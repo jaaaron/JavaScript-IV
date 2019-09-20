@@ -128,3 +128,52 @@ class Humanoid extends CharacterStats {
    // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
    // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
    // * Create two new objects, one a villain and one a hero and fight it out with methods!
+const villain = new Humanoid(1)
+const hero = new Humanoid(1)
+
+const Villain = new Humanoid ({
+  createdAt: new Date(),
+  dimensions: {
+    length: 3,
+    width: 3,
+    height: 3,
+  },
+  healthPoints: 125,
+  name: 'Dr Evil',
+  team: 'Axis',
+  weapons: [
+    'Double End Sword',
+    'Shield',
+  ],
+  language: 'Common Tongue',
+});
+
+const Hero = new Humanoid ({
+  createdAt: new Date(),
+  dimensions: {
+    length: 2.5,
+    width: 2.5,
+    height: 2.9,
+  },
+  healthPoints: 100,
+  name: 'Hero',
+  team: 'Allies',
+  weapons: [
+    'Hero Sword',
+    'Shield',
+  ],
+  language: 'Common Tongue',
+});
+
+GameObject.prototype.attack1 = function() {
+  return `${this.name} has started to attacked.`;
+}
+GameObject.prototype.defend1 = function() {
+  return `${this.name} has defended an attack.`;
+}
+
+/* Simulated Fight between Villain & Hero */
+console.log(Villain.attack1())
+console.log(Hero.defend1())
+console.log(Villain.healthPoints)
+console.log(Hero.healthPoints)
